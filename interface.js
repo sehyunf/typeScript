@@ -48,3 +48,22 @@ const mytype = {
     prop1: 10,
     prop2: ""
 };
+// 상수를 모아놓은 형태이며, 값의 의미를 부여함으로서 오타를 방지한다
+// 기본적으로 인덱스는 0으로 시작해서 1씩 증가한다.
+// 문자열로 넣을 시 인덱스의 증가가 불가능하기 때문에 모두 명시해 줘야함
+var BasicDirection;
+(function (BasicDirection) {
+    BasicDirection[BasicDirection["Up"] = 100] = "Up";
+    BasicDirection[BasicDirection["Down"] = 101] = "Down";
+    BasicDirection[BasicDirection["Left"] = 102] = "Left";
+    BasicDirection[BasicDirection["Right"] = 103] = "Right";
+})(BasicDirection || (BasicDirection = {}));
+var BasicDirectionString;
+(function (BasicDirectionString) {
+    BasicDirectionString["Up"] = "UP";
+    BasicDirectionString["Down"] = "DOWN";
+    BasicDirectionString["Left"] = "LEFT";
+    BasicDirectionString["Right"] = "RIGHT";
+})(BasicDirectionString || (BasicDirectionString = {}));
+const basicEnumVar = BasicDirection.Right;
+console.log(basicEnumVar);
